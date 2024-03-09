@@ -13,6 +13,8 @@
     <link href="//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <!-- ********* AngularJS ********* -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
 
@@ -22,6 +24,7 @@
     <!-- Local -->
     <link rel="stylesheet" href="css/main.css?v=0.0.1">
     <link rel="stylesheet" href="js/components/editor/editor.css?v=0.0.1">
+    <link rel="stylesheet" href="js/components/settings-modal/settings-modal.css?v=0.0.1">
 
     <script src="js/global.js?v=0.0.1" type="text/javascript"></script>
     <script src="js/notify.js?v=0.0.1" type="text/javascript"></script>
@@ -32,26 +35,43 @@
     <script src="js/angular.js?v=0.0.1" type="text/javascript"></script>
     <script src="js/directives.js?v=0.0.1" type="text/javascript"></script>
     <script src="js/components/editor/editor.js?v=0.0.1" type="text/javascript"></script>
+    <script src="js/components/settings-modal/settings-modal.js?v=0.0.1" type="text/javascript"></script>
 
 </head>
 
 <body ng-controller="MainController">
 
-<div class="container bg-light">
-    <div class="row" ng-repeat="conversation in conversations track by $index">
-        <div class="col">
+<header class="text-bg-dark">
+    <div class="container-fluid">
+        <div class="d-flex flex-wrap align-items-center">
+            <a href="/" class="d-flex align-items-center text-white text-decoration-none">
+                <span class="grammar-icon"></span>
+            </a>
+
+            <ul class="nav">
+                <li><a href="#" ng-click="openSettings()" class="nav-link px-2 text-white">Settings</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main role="main" class="container-fluid main-body">
+    <div class="row conversation" ng-repeat="conversation in conversations track by $index">
+        <div class="col-12 col-sm-12 col-md-6">
             <editor type="user" editor-model="conversation.editorText"></editor>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-12 col-md-6">
             <editor type="ai" input-model="conversation.editorText" editor-model="conversation.aiText" ng-close="closeConversation($index)"></editor>
         </div>
     </div>
-    <div class="row mt-2">
+    <div class="row mt-3">
         <div class="col">
             <button type="button" class="btn btn-secondary" ng-click="addNewConversation()">Add Conversation</button>
         </div>
     </div>
-</div>
+</main>
+
+<settings-modal controller="settingsModal"></settings-modal>
 
 </body>
 </html>

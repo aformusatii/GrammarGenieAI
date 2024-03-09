@@ -11,9 +11,10 @@
 .editor-text {
     width: 100%;
     min-height: 100px;
-    background-color: aliceblue;
-    border: 1px solid #0d6efd;
+    background-color: #FFFFFF;
+    border: 1px solid #dee2e6;
     padding: 2px 5px;
+    font-size: 0.8em;
 }
 
 span.wait {

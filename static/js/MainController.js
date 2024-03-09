@@ -28,4 +28,9 @@ const MainController = function($rootScope, $scope, $http) {
         //console.log('change', newValue);
         launchSaveData($scope.conversations);
     }, true);
+
+    $scope.settingsModal = {};
+    $scope.openSettings = function() {
+        $scope.settingsModal.show();
+    }
 }
