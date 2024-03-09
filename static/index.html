@@ -1,0 +1,57 @@
+<html lang="en" ng-app="ngGrammarGenieAI">
+<head>
+    <meta charset="utf-8">
+
+    <title>GrammarGenieAI v0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- JQuery -->
+    <script src="//code.jquery.com/jquery-3.5.1.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap 5 -->
+    <link href="//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <!-- ********* AngularJS ********* -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+
+    <!-- Notify JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Local -->
+    <link rel="stylesheet" href="css/main.css?v=0.0.1">
+    <link rel="stylesheet" href="js/components/editor/editor.css?v=0.0.1">
+
+    <script src="js/global.js?v=0.0.1" type="text/javascript"></script>
+    <script src="js/notify.js?v=0.0.1" type="text/javascript"></script>
+    <script src="js/storage.js?v=0.0.1" type="text/javascript"></script>
+
+    <script src="js/MainController.js?v=0.0.1" type="text/javascript"></script>
+
+    <script src="js/angular.js?v=0.0.1" type="text/javascript"></script>
+    <script src="js/directives.js?v=0.0.1" type="text/javascript"></script>
+    <script src="js/components/editor/editor.js?v=0.0.1" type="text/javascript"></script>
+
+</head>
+
+<body ng-controller="MainController">
+
+<div class="container bg-light">
+    <div class="row" ng-repeat="conversation in conversations track by $index">
+        <div class="col">
+            <editor type="user" editor-model="conversation.editorText"></editor>
+        </div>
+        <div class="col">
+            <editor type="ai" input-model="conversation.editorText" editor-model="conversation.aiText" ng-close="closeConversation($index)"></editor>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col">
+            <button type="button" class="btn btn-secondary" ng-click="addNewConversation()">Add Conversation</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

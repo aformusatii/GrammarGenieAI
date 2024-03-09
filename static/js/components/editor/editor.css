@@ -1,0 +1,27 @@
+.editor {
+    /* background-color: chartreuse;
+    border: 1px solid black; */
+    width: 100%;
+}
+
+.editor-menu {
+    padding: 5px 0 5px 0;
+}
+
+.editor-text {
+    width: 100%;
+    min-height: 100px;
+    background-color: aliceblue;
+    border: 1px solid #0d6efd;
+    padding: 2px 5px;
+}
+
+span.wait {
+    background-image: url("/img/file.gif");
+    height: 50px;
+    width: 50px;
+}
+
+.spinner-border {
+
+}
