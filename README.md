@@ -4,8 +4,24 @@ The Grammar Checker and Corrector is a Web App based on the [OpenAI Chat Complet
 ## Screenshots
 ![alt text](doc/GrammarGenieAI_1.png)
 
-## Usage
-To be announced...
+## Run with Docker Compose
+
+
+1. Check out the code:
+```bash
+git clone https://github.com/aformusatii/GrammarGenieAI.git
+cd GrammarGenieAI
+```
+
+2. Create a `.env` file in the root folder `GrammarGenieAI`, include your `OPENAI_API_KEY` like this:
+```bash
+OPENAI_API_KEY=your_openapi_api_key
+```
+
+3. Run with docker compose:
+```bash
+sudo docker-compose up -d
+```
 
 ## Local Installation
 
