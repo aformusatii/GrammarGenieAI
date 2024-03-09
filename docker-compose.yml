@@ -1,0 +1,10 @@
+version: "2"
+services:
+  grammar:
+    build: .
+    container_name: grammar
+    env_file:
+      - .env
+    ports:
+      - 30100:30100
+    restart: unless-stopped
