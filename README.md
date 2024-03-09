@@ -6,7 +6,6 @@ The Grammar Checker and Corrector is a Web App based on the [OpenAI Chat Complet
 
 ## Run with Docker Compose
 
-
 1. Check out the code:
 ```bash
 git clone https://github.com/aformusatii/GrammarGenieAI.git
@@ -23,9 +22,11 @@ OPENAI_API_KEY=your_openapi_api_key
 sudo docker-compose up -d
 ```
 
+4. Open the app web page by navigating to [http://localhost:30100/](http://localhost:30100/). If you're accessing it from a remote machine, replace `localhost` with your IP.
+
 ## Local Installation
 
-1. To install, follow these steps:
+1. Check out the code and install all dependencies:
 ```bash
 git clone https://github.com/aformusatii/GrammarGenieAI.git
 cd GrammarGenieAI
