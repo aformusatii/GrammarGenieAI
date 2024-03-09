@@ -10,13 +10,12 @@
 <!-- AI Assistant -->
 <div class="editor" ng-if="!isUserText">
     <div class="editor-menu clearfix">
-        <button type="button" class="btn btn-primary" ng-click="copy()">Copy</button>
-        <button type="button" class="btn btn-primary" ng-click="generate()" ng-if="!generationInProgress">Generate</button>
-
+        <button type="button" class="btn btn-primary" ng-click="generate()" ng-if="!generationInProgress">Run Correction</button>
         <button type="button" class="btn btn-primary" ng-if="generationInProgress">
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-            <span class="sr-only">Generating...</span>
+            <span class="sr-only">Running...</span>
         </button>
+        <button type="button" class="btn btn-primary" ng-click="copy()">Copy</button>
 
         <button type="button" class="btn btn-danger float-right" ng-click="close()">Close</button>
     </div>
